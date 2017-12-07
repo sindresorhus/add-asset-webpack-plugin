@@ -47,6 +47,11 @@ If the function returns a promise, it will be awaited.
 If a function, it will receive the [`compilation` instance](https://webpack.js.org/api/compilation/).
 
 
+## Related
+
+- [add-module-exports-webpack-plugin](https://github.com/sindresorhus/add-module-exports-webpack-plugin) - Add `module.exports` for Babel and TypeScript compiled code
+
+
 ## License
 
 MIT © [Sindre Sorhus](https://sindresorhus.com)
