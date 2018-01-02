@@ -49,6 +49,7 @@ If a function, it will receive the [`compilation` instance](https://webpack.js.o
 
 ## Related
 
+- [node-env-webpack-plugin](https://github.com/sindresorhus/node-env-webpack-plugin) - Simplified `NODE_ENV` handling
 - [add-module-exports-webpack-plugin](https://github.com/sindresorhus/add-module-exports-webpack-plugin) - Add `module.exports` for Babel and TypeScript compiled code
 
 
