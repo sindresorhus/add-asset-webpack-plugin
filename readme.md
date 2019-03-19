@@ -38,7 +38,7 @@ Relative file path for the asset.
 
 #### source
 
-Type: `string` `Function<string|Promise>`
+Type: `string` `Function => string | Promise<string>`
 
 Asset source or a function that returns the asset source.
 

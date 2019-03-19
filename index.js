@@ -6,32 +6,16 @@ module.exports = class AddAssetPlugin {
 		this.source = source;
 	}
 
-	// TODO: For when we target Node.js 8
-	// apply(compiler) {
-	// 	compiler.plugin('emit', async (compilation, cb) => {
-	// 		const source = typeof this.source === 'string' ? this.source : await this.source(compilation);
-
-	// 		compilation.assets[this.filePath] = {
-	// 			source: () => source,
-	// 			size: () => source.length
-	// 		};
-
-	// 		cb();
-	// 	});
-	// }
-
 	apply(compiler) {
-		compiler.plugin('emit', (compilation, cb) => {
-			const rawSource = typeof this.source === 'string' ? this.source : this.source(compilation);
+		compiler.plugin('emit', async (compilation, callback) => {
+			const source = typeof this.source === 'string' ? this.source : await this.source(compilation);
 
-			Promise.resolve(rawSource).then(source => {
-				compilation.assets[this.filePath] = {
-					source: () => source,
-					size: () => source.length
-				};
+			compilation.assets[this.filePath] = {
+				source: () => source,
+				size: () => source.length
+			};
 
-				cb();
-			});
+			callback();
 		});
 	}
 };
