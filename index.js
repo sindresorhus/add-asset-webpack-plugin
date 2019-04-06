@@ -7,7 +7,7 @@ module.exports = class AddAssetPlugin {
 	}
 
 	apply(compiler) {
-		compiler.plugin('emit', async (compilation, callback) => {
+		compiler.hooks.emit.tapAsync('AddAssetPlugin', async (compilation, callback) => {
 			const source = typeof this.source === 'string' ? this.source : await this.source(compilation);
 
 			compilation.assets[this.filePath] = {
