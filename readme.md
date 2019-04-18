@@ -1,6 +1,6 @@
 # add-asset-webpack-plugin [![Build Status](https://travis-ci.org/sindresorhus/add-asset-webpack-plugin.svg?branch=master)](https://travis-ci.org/sindresorhus/add-asset-webpack-plugin)
 
-> Dynamically add an asset to the [webpack](https://webpack.js.org) graph
+> Dynamically add an asset to the [Webpack](https://webpack.js.org) graph
 
 
 ## Install
@@ -38,13 +38,11 @@ Relative file path for the asset.
 
 #### source
 
-Type: `string` `Function => string | Promise<string>`
+Type: `string | (compilation => string | Promise<string>)`
 
 Asset source or a function that returns the asset source.
 
-If the function returns a promise, it will be awaited.
-
-If a function, it will receive the [`compilation` instance](https://webpack.js.org/api/compilation/).
+If a function, it will receive the [`compilation` instance](https://webpack.js.org/api/compilation/). And if the function returns a promise, it will be awaited.
 
 
 ## Related
