@@ -34,5 +34,8 @@
 		"tempy": "^0.2.1",
 		"webpack": "^4.29.6",
 		"xo": "^0.24.0"
+	},
+	"peerDependencies": {
+		"webpack": "4.x"
 	}
 }
