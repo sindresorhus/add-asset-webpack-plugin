@@ -11,7 +11,7 @@ test('main', async t => {
 	config.output.path = cwd;
 	await pify(webpack)(config);
 	t.true(fs.readFileSync(path.join(cwd, 'unicorn.js'), 'utf8').includes('🦄'));
-	t.is(fs.readFileSync(path.join(cwd, 'rainbow.js'), 'utf8'), '🌈');
-	t.is(fs.readFileSync(path.join(cwd, 'cake.js'), 'utf8'), '🎂');
-	t.is(fs.readFileSync(path.join(cwd, 'cat.js'), 'utf8'), '🐈');
+	t.true(fs.readFileSync(path.join(cwd, 'rainbow.js'), 'utf8').includes('🌈'));
+	t.true(fs.readFileSync(path.join(cwd, 'cake.js'), 'utf8').includes('🎂'));
+	t.true(fs.readFileSync(path.join(cwd, 'cat.js'), 'utf8').includes('🐈'));
 });

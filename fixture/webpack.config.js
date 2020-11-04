@@ -7,8 +7,8 @@ module.exports = {
 	},
 	entry: __dirname,
 	plugins: [
-		new AddAssetPlugin('rainbow.js', '🌈'),
-		new AddAssetPlugin('cake.js', () => '🎂'),
-		new AddAssetPlugin('cat.js', () => Promise.resolve('🐈'))
+		new AddAssetPlugin('rainbow.js', 'console.log("🌈")'),
+		new AddAssetPlugin('cake.js', () => 'console.log("🎂")'),
+		new AddAssetPlugin('cat.js', () => Promise.resolve('console.log("🐈")'))
 	]
 };

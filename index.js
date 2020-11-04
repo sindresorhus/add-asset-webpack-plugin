@@ -1,5 +1,7 @@
 'use strict';
 
+const {Compilation, sources: {RawSource}} = require('webpack');
+
 module.exports = class AddAssetPlugin {
 	constructor(filePath, source) {
 		this.filePath = filePath;
@@ -7,13 +9,14 @@ module.exports = class AddAssetPlugin {
 	}
 
 	apply(compiler) {
-		compiler.hooks.emit.tapPromise('AddAssetPlugin', async compilation => {
-			const source = typeof this.source === 'string' ? this.source : await this.source(compilation);
-
-			compilation.assets[this.filePath] = {
-				source: () => source,
-				size: () => source.length
-			};
+		compiler.hooks.compilation.tap('AddAssetPlugin', compilation => {
+			compilation.hooks.processAssets.tapPromise({
+				name: 'AddAssetPlugin',
+				stage: Compilation.PROCESS_ASSETS_STAGE_ADDITIONS
+			}, async () => {
+				const source = typeof this.source === 'string' ? this.source : await this.source(compilation);
+				compilation.emitAsset(this.filePath, new RawSource(source));
+			});
 		});
 	}
 };
