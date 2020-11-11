@@ -4,10 +4,13 @@
 	"description": "Dynamically add an asset to the Webpack graph",
 	"license": "MIT",
 	"repository": "sindresorhus/add-asset-webpack-plugin",
+	"funding": {
+		"url": "https://github.com/sponsors/sindresorhus"
+	},
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
+		"url": "https://sindresorhus.com"
 	},
 	"engines": {
 		"node": ">=10.13.0"
@@ -29,11 +32,11 @@
 		"file"
 	],
 	"devDependencies": {
-		"ava": "^1.4.1",
+		"ava": "^2.4.0",
 		"pify": "^5.0.0",
-		"tempy": "^0.3.0",
+		"tempy": "^1.0.0",
 		"webpack": "^5.4.0",
-		"xo": "^0.24.0"
+		"xo": "^0.34.2"
 	},
 	"peerDependencies": {
 		"webpack": ">=5"

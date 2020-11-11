@@ -1,14 +1,12 @@
-# add-asset-webpack-plugin [![Build Status](https://travis-ci.org/sindresorhus/add-asset-webpack-plugin.svg?branch=master)](https://travis-ci.org/sindresorhus/add-asset-webpack-plugin)
+# add-asset-webpack-plugin [![Build Status](https://travis-ci.com/sindresorhus/add-asset-webpack-plugin.svg?branch=master)](https://travis-ci.com/github/sindresorhus/add-asset-webpack-plugin)
 
 > Dynamically add an asset to the [Webpack](https://webpack.js.org) graph
-
 
 ## Install
 
 ```
 $ npm install add-asset-webpack-plugin
 ```
-
 
 ## Usage
 
@@ -24,7 +22,6 @@ module.exports = {
 	]
 };
 ```
-
 
 ## API
 
@@ -44,13 +41,7 @@ Asset source or a function that returns the asset source.
 
 If a function, it will receive the [`compilation` instance](https://webpack.js.org/api/compilation/). And if the function returns a promise, it will be awaited.
 
-
 ## Related
 
 - [node-env-webpack-plugin](https://github.com/sindresorhus/node-env-webpack-plugin) - Simplified `NODE_ENV` handling
 - [add-module-exports-webpack-plugin](https://github.com/sindresorhus/add-module-exports-webpack-plugin) - Add `module.exports` for Babel and TypeScript compiled code
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)

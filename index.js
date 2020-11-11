@@ -1,5 +1,4 @@
 'use strict';
-
 const {Compilation, sources: {RawSource}} = require('webpack');
 
 const tapOptions = {
