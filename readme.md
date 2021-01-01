@@ -1,4 +1,4 @@
-# add-asset-webpack-plugin [![Build Status](https://travis-ci.com/sindresorhus/add-asset-webpack-plugin.svg?branch=master)](https://travis-ci.com/github/sindresorhus/add-asset-webpack-plugin)
+# add-asset-webpack-plugin
 
 > Dynamically add an asset to the [Webpack](https://webpack.js.org) graph
 
