@@ -1,5 +1,6 @@
 'use strict';
 const AddAssetPlugin = require('..');
+const ChildCompilerPlugin = require('./child-compiler-plugin');
 
 module.exports = {
 	output: {
@@ -9,6 +10,7 @@ module.exports = {
 	plugins: [
 		new AddAssetPlugin('rainbow.js', 'console.log("🌈")'),
 		new AddAssetPlugin('cake.js', () => 'console.log("🎂")'),
-		new AddAssetPlugin('cat.js', () => Promise.resolve('console.log("🐈")'))
+		new AddAssetPlugin('cat.js', () => Promise.resolve('console.log("🐈")')),
+		new ChildCompilerPlugin()
 	]
 };

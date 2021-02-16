@@ -9,7 +9,8 @@ test('main', async t => {
 	const config = require('./fixture/webpack.config');
 	const cwd = tempy.directory();
 	config.output.path = cwd;
-	await pify(webpack)(config);
+	const stats = await pify(webpack)(config);
+	t.false(stats.hasErrors());
 	t.true(fs.readFileSync(path.join(cwd, 'unicorn.js'), 'utf8').includes('🦄'));
 	t.true(fs.readFileSync(path.join(cwd, 'rainbow.js'), 'utf8').includes('🌈'));
 	t.true(fs.readFileSync(path.join(cwd, 'cake.js'), 'utf8').includes('🎂'));
