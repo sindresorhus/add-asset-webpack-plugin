@@ -13,7 +13,7 @@ module.exports = class AddAssetPlugin {
 	}
 
 	apply(compiler) {
-		compiler.hooks.compilation.tap('AddAssetPlugin', compilation => {
+		compiler.hooks.thisCompilation.tap('AddAssetPlugin', compilation => {
 			compilation.hooks.processAssets.tapPromise(tapOptions, async () => {
 				let source;
 				if (typeof this.source === 'string') {
