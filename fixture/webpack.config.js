@@ -1,16 +1,21 @@
-'use strict';
-const AddAssetPlugin = require('..');
-const ChildCompilerPlugin = require('./child-compiler-plugin');
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+import AddAssetPlugin from '../index.js';
+import ChildCompilerPlugin from './child-compiler-plugin.js';
 
-module.exports = {
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const config = {
 	output: {
-		filename: 'unicorn.js'
+		filename: 'unicorn.js',
 	},
 	entry: __dirname,
 	plugins: [
 		new AddAssetPlugin('rainbow.js', 'console.log("🌈")'),
 		new AddAssetPlugin('cake.js', () => 'console.log("🎂")'),
-		new AddAssetPlugin('cat.js', () => Promise.resolve('console.log("🐈")')),
-		new ChildCompilerPlugin()
-	]
+		new AddAssetPlugin('cat.js', async () => 'console.log("🐈")'),
+		new ChildCompilerPlugin(),
+	],
 };
+
+export default config;

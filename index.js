@@ -1,12 +1,14 @@
-'use strict';
-const {Compilation, sources: {RawSource}} = require('webpack');
+import webpack from 'webpack';
+
+const {Compilation, sources} = webpack;
+const {RawSource} = sources;
 
 const tapOptions = {
 	name: 'AddAssetPlugin',
-	stage: Compilation.PROCESS_ASSETS_STAGE_ADDITIONS
+	stage: Compilation.PROCESS_ASSETS_STAGE_ADDITIONS,
 };
 
-module.exports = class AddAssetPlugin {
+export default class AddAssetPlugin {
 	constructor(filePath, source) {
 		this.filePath = filePath;
 		this.source = source;
@@ -31,4 +33,4 @@ module.exports = class AddAssetPlugin {
 			});
 		});
 	}
-};
+}

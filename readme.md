@@ -4,16 +4,16 @@
 
 ## Install
 
-```
-$ npm install add-asset-webpack-plugin
+```sh
+npm install add-asset-webpack-plugin
 ```
 
 ## Usage
 
 ```js
-const AddAssetPlugin = require('add-asset-webpack-plugin');
+import AddAssetPlugin from 'add-asset-webpack-plugin';
 
-module.exports = {
+export default {
 	// …
 	plugins: [
 		new AddAssetPlugin('file.js', `

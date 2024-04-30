@@ -1,13 +1,13 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import test from 'ava';
 import webpack from 'webpack';
-import tempy from 'tempy';
+import {temporaryDirectory} from 'tempy';
 import pify from 'pify';
+import config from './fixture/webpack.config.js';
 
 test('main', async t => {
-	const config = require('./fixture/webpack.config');
-	const cwd = tempy.directory();
+	const cwd = temporaryDirectory();
 	config.output.path = cwd;
 	const stats = await pify(webpack)(config);
 	t.false(stats.hasErrors());
