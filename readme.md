@@ -39,7 +39,7 @@ Type: `string | (compilation => string | Promise<string>)`
 
 Asset source or a function that returns the asset source.
 
-If a function, it will receive the [`compilation` instance](https://webpack.js.org/api/compilation/). And if the function returns a promise, it will be awaited.
+If a function, it will receive the [`compilation` instance](https://webpack.js.org/api/compilation/).
 
 ## FAQ
 
