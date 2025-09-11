@@ -41,6 +41,12 @@ Asset source or a function that returns the asset source.
 
 If a function, it will receive the [`compilation` instance](https://webpack.js.org/api/compilation/). And if the function returns a promise, it will be awaited.
 
+## FAQ
+
+### Can I import the dynamically created files?
+
+No. This plugin creates assets in the output directory, not importable modules. For virtual modules that can be imported, use [`webpack-virtual-modules`](https://github.com/sysgears/webpack-virtual-modules) instead.
+
 ## Related
 
 - [node-env-webpack-plugin](https://github.com/sindresorhus/node-env-webpack-plugin) - Simplified `NODE_ENV` handling
