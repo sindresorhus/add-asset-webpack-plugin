@@ -45,5 +45,10 @@
 	},
 	"peerDependencies": {
 		"webpack": ">=5"
+	},
+	"peerDependenciesMeta": {
+		"webpack": {
+			"optional": true
+		}
 	}
 }
