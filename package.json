@@ -1,6 +1,6 @@
 {
 	"name": "add-asset-webpack-plugin",
-	"version": "3.1.0",
+	"version": "3.1.1",
 	"description": "Dynamically add an asset to the Webpack graph",
 	"license": "MIT",
 	"repository": "sindresorhus/add-asset-webpack-plugin",
